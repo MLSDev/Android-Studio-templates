@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<template name="ActivityBlank" description="Creates empty activity with viewModel" format="4"
+    minApi="14" revision="1">
+
+    <category value="MLSDev" />
+
+    <parameter name="Activity Name" constraints="activity|nonempty|unique" default="BlankActivity"
+        help="The name of the activity class to create" id="className" type="string" />
+
+    <parameter name="Layout Name" constraints="layout|nonempty|unique" default="activity_blank"
+        help="The name of the layout to create" id="activityName"
+        suggest="activity_${classToResource(className)}" type="string" />
+
+    <parameter name="ViewModel Name" constraints="class|nonempty|unique" default="Blank"
+        help="The name of the view model to create" id="Name"
+        suggest="${underscoreToCamelCase(classToResource(className))}" type="string"
+        visibility="false" />
+
+    <parameter name="Package Name" constraints="nonempty|unique" default="blank"
+        help="The name of the package to create" id="packName"
+        suggest="${classToResource(className)}" type="string" visibility="false" />
+
+    <parameter name="Add Toolbar" default="false" help="Add toolbar to layout" id="isToolbar"
+        type="boolean" />
+
+    <parameter name="Portrait only" default="true" help="Disable change to landscape orientation" id="isPortrait"
+        type="boolean" />
+
+    <thumbs>
+        <thumb>template_blank_activity.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
