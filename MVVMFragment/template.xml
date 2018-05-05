@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<template name="Fragment" description="Creates an MVVM fragment and its ViewModel" format="4"
+    minApi="14" revision="1">
+
+    <category value="MLSDev" />
+
+    <parameter name="Fragment Name" constraints="class|nonempty|unique" default="BlankFragment"
+        help="Class name for Fragment" id="className" type="string" />
+
+    <parameter name="Fragment Layout Name" constraints="layout|nonempty|unique"
+        default="fragment_blank" help="The name of the layout to create" id="fragmentName"
+        suggest="fragment_${classToResource(className)}" type="string" />
+
+    <parameter name="Name" constraints="class|nonempty|unique" default="Blank"
+        help="The name of the view model to create" id="Name"
+        suggest="${underscoreToCamelCase(classToResource(className))}" type="string"
+        visibility="false" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
