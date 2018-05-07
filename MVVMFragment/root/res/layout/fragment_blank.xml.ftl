@@ -2,7 +2,7 @@
   <data>
     <variable
         name="vm"
-        type="${packageName}.${Name}ViewModel"
+        type="${packageName}.${packName}.${Name}ViewModel"
         />
   </data>
   <FrameLayout 

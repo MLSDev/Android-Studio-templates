@@ -11,6 +11,10 @@
         default="fragment_blank" help="The name of the layout to create" id="fragmentName"
         suggest="fragment_${classToResource(className)}" type="string" />
 
+    <parameter name="Package Name" constraints="nonempty|unique" default="blank"
+        help="The name of the package to create" id="packName"
+        suggest="${classToResource(className)}" type="string" visibility="false" />
+
     <parameter name="Name" constraints="class|nonempty|unique" default="Blank"
         help="The name of the view model to create" id="Name"
         suggest="${underscoreToCamelCase(classToResource(className))}" type="string"

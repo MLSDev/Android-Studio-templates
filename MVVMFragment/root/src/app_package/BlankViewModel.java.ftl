@@ -5,7 +5,7 @@ package ${packageName}.${packName};
 public class ${Name}ViewModel extends BaseViewModel<${Name}Fragment> {
 
   public ${Name}ViewModel(${Name}Fragment fragment) {
-          super(activity);
+          super(fragment);
   }
 
 }
