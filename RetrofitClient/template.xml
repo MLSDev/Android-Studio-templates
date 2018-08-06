@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<template name="RetrofitClient" description="Creates Retrofit Client" format="4" minApi="14"
+    revision="1">
+
+    <category value="MLSDev" />
+
+    <parameter name="Service Name" constraints="class|nonempty|unique" default="TestService"
+        help="Class name for Service" id="className" type="string" />
+
+    <parameter name="Package Name" constraints="nonempty|unique" default="blank"
+        help="The name of the package to create" id="packName"
+        suggest="${classToResource(className)}" type="string" visibility="true" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
